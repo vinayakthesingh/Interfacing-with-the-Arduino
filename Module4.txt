@@ -1,0 +1,19 @@
+Write about the design of a system that you might build for your home which uses an Arduino with a wifi shield. The system must use the wifi connection for a useful purpose in the system. The Arduino should be wired to sensors and/or actuators which help it to perform some useful task in your home.
+Be sure to clearly describe the need for the wifi connection in your system.
+W​rite your description in a separate document and upload it here.
+
+
+
+
+
+
+
+This home automation system can measure temperature, relative humidity, light intensity and control two electrical equipment on Cayenne IoT (Internet of Things) platform. The two electrical equipment can be a light bulb and a ceiling fan, or any other electrical devices.
+
+In this project, two sensors are used. One is a light-dependent resistor (LDR) to sense ambient light intensity, and the other is DHT11 temperature and relative humidity sensor. Relays connected to output pins are used as actuators here. Electrical loads like lights and fans are connected to contacts of the relays, which are controlled remotely through a Web interface or mobile app. Wi-Fi module ESP8266 (NodeMCU) used here is an embedded controller that is programmed through Arduino, to handle analogue or digital data received from sensors and to transmit over the Internet. At the same time, it accepts commands from the Web and accordingly actuates connected devices or actuators. The Internet works as a network link to connect the embedded system to the outer world. Cayenne platform supports Message Queue Telemetry Transport (MQTT) protocol for communication. MQTT protocol is a lightweight messaging protocol for use over TCP/IP protocol. It is designed for low-power devices that work on low bandwidth.
+Cayenne platform has a simple drag-and-drop feature to create a dashboard in a few minutes. This saves time and effort for programming the user interface.
+
+The software is written in Arduino programming language, which allows writing the code within a few lines. The program makes the device communicate with Cayenne platform when connected to the Internet through an access point or Wi-Fi router.
+
+For programming NodeMCU module, three unique identities are required from Cayenne website, namely, MQTT user name, MQTT password and Client ID. When the device is connected to the network, these IDs help Cayenne website to find the device and start communicating with it.
+Other IDs required are your Wi-Fi SSID and password, if any, to connect with the local Wi-Fi network.
